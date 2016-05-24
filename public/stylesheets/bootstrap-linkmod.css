@@ -1,0 +1,79 @@
+
+	a.containers {
+	  color: #FFFFFF;
+	  text-decoration: none;
+	}
+	a.containers:hover,
+	a.containers:focus {
+	  color: #FF9900;
+	  text-decoration: underline;
+	}
+	a.containers:focus {
+	  color:#FFF;
+	  outline: none;
+	  outline: 5px auto -webkit-focus-ring-color;
+	  outline-offset: -2px;
+	}
+	a.exterior {
+	  color: #FFFFFF;
+	  text-decoration: none;
+	}
+	a.exterior:hover,
+	a.exterior:focus {
+	  color: #FF9900;
+	  text-decoration: underline;
+	}
+	a.exterior:focus {
+	  color:#FFF;
+	  outline: none;
+	  outline: 5px auto -webkit-focus-ring-color;
+	  outline-offset: -2px;
+	}
+
+	a.white {
+	  color: #FFFFFF;
+	  text-decoration: none;
+	}
+	a.white:hover,
+	a.white:focus {
+	  color: #FF9900;
+	  text-decoration: underline;
+	}
+	a.white:focus {
+	  color:#FFF;
+	  outline: none;
+	  outline: 5px auto -webkit-focus-ring-color;
+	  outline-offset: -2px;
+	}
+
+	a.black1 {
+	  color: #000;
+	  text-decoration: none;
+	}
+	a.black1:hover,
+	a.black1:focus {
+	  color: #000;
+	  text-decoration: underline;
+	}
+	a.black1:focus {
+	  color:#FF9900;
+	  outline: none;
+	  outline: 5px auto -webkit-focus-ring-color;
+	  outline-offset: -2px;
+	}	
+	
+	a.black2 {
+	  color: #000;
+	  text-decoration: none;
+	}
+	a.black2:hover,
+	a.black2:focus {
+	  color: #000;
+	  text-decoration: underline;
+	}
+	a.black2:focus {
+	  color:#FF9900;
+	  outline: none;
+	  outline: 5px auto -webkit-focus-ring-color;
+	  outline-offset: -2px;
+	}	

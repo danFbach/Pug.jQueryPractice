@@ -1,0 +1,147 @@
+doctype 
+
+html
+	include ./layout.pug
+	body
+		#page_container(style="display:none;")
+			#upper_navbar.container(style="width:100%;background-color:#EEEEEE;height:45px;border-top:4px solid;border-color:#ff9900;text-align:right;")
+				#nav_links.container(style="max-width:850px;padding-top:10px;position:relative;")
+					a.black1(href="#", id="Index",style="padding-left:10px;padding-right:10px;") Home
+					b | 
+					a.black1(href="#", id="About0",style="padding-left: 10px;padding-right: 10px;") About
+					b |
+					a.black1(href="#", id="Containers",style="padding-left: 10px;padding-right: 10px;") Containers
+					b | 
+					a.black1(href="#", id="Exterior",style="padding-left: 10px;padding-right: 10px;") Exterior 
+					b | 
+					a.black1(href="#", style="padding-left: 10px;padding-right: 10px;") Account Home
+					b | 
+					a.black1(href="#", style="padding-left: 10px;padding-right: 10px;") View Cart
+					b | 
+					a.black1(href="#", id="Help0",style="padding-left: 10px;padding-right: 10px;") Help 
+			#main_content.container(style="max-width:850px;")
+				#title_pic.row(style="height:110px;padding:10px;background-size:100%;max-width:587px;background-position:center;background-repeat: no-repeat; background-image:url('../public/media/nailTitle.png');")
+				#product_navbar.navbar(style="background-color:#2d2206; text-align:center;padding:5px;width:100%;")
+					.btn-group( id="button_fade")
+						button(type="button", class="btn btn-default btn-sm" data-hover="dropdown", style="background-color: transparent;color: #FFF;border-color:transparent;padding-top:10px;") ANCHOR BOLTS
+						.dropdown-menu(style="background-color: #2d2206; color: #FFF;text-align: center;")
+							a.containers(href="#") Containers
+							br
+							a.exterior(href="#") Exterior
+					<b class="ylwpipe"> | </b>
+					.btn-group( id="button_fade")
+						button(type="button", class="btn btn-default btn-sm" data-hover="dropdown", style="background-color: transparent;color: #FFF;border-color:transparent;padding-top:10px;") COMPOSITE DECK / FENCE PRODUCTS
+						.dropdown-menu(style="background-color: #2d2206; color: #FFF;text-align: center;")
+							a.containers(href="#") Containers
+							br
+							a.exterior(href="#") Exterior
+					<b class="ylwpipe"> | </b>
+					.btn-group( id="button_fade")
+						button(type="button", class="btn btn-default btn-sm" data-hover="dropdown", style="background-color: transparent;color: #FFF;border-color:transparent;padding-top:10px;") ROOFING TAB
+						.dropdown-menu(style="background-color: #2d2206; color: #FFF;text-align: center;")
+							a.containers(href="#") Containers
+							br
+							a.exterior(href="#") Exterior
+					<b class="ylwpipe"> | </b>
+					.btn-group( id="button_fade")
+						button(type="button", class="btn btn-default btn-sm" data-hover="dropdown", style="background-color: transparent;color: #FFF;border-color:transparent;padding-top:10px;") PNEUMATIC FASTENERS
+						.dropdown-menu(style="background-color: #2d2206; color: #FFF;text-align: center;")
+							a.containers(href="#") Containers
+							br
+							a.exterior(href="#") Exterior
+					<b class="ylwpipe"> | </b>
+					.btn-group( id="button_fade")
+						button(type="button", class="btn btn-default btn-sm" data-hover="dropdown", style="background-color: transparent;color: #FFF;border-color:transparent;padding-top:10px;") NAILS
+						.dropdown-menu(style="background-color: #2d2206; color: #FFF;text-align: center;")
+							a.containers(href="#") Containers
+							br
+							a.exterior(href="#") Exterior
+					<b class="ylwpipe"> | </b>
+					.btn-group( id="button_fade")
+						button(type="button", class="btn btn-default btn-sm" data-hover="dropdown", style="background-color: transparent;color: #FFF;border-color:transparent;padding-top:10px;") SCREWS
+						.dropdown-menu(style="background-color: #2d2206; color: #FFF;text-align: center;")
+							a.containers(href="#") Containers
+							br
+							a.exterior(href="#") Exterior	
+				.row
+					.col-xs-2(style="margin-left:15px;border-width: 1px;border-color: #999;border-style:dotted;padding-bottom:5px;min-width:100px;")
+						.h5(style="color: #ff9900;") <b> COMPANY INFO</b><br>			
+						a.black2(href="#" id="About1") About Us <br>
+						a.black2(href="#") Blog <br>
+						a.black2(href="#") Returns <br>
+						a.black2(href="#") Shipping <br>
+						a.black2(href="#" id="Help1") Site Help / FAQ		
+					#new_content
+						.col-xs-8
+							.h2(style="margin-top:-10px;color: #ff9900;text-align:center;") Homepage
+			script.
+				$("document").ready(function(){
+					$("#title_pic.row").css({
+						"background-image" : "url('../public/media/nailTitle.png')",
+						"background-repeat" : "no-repeat",
+						"background-size" : "100%",
+						"background-position" : "center center"
+					});
+					$(".ylwpipe").css({
+						"color":"#F90"
+					});
+					$(".btn-sm").css({
+						"padding" : "5px",
+						"color" : "#FF9900"
+					});	
+					$("#page_container").fadeIn(1500, "linear");
+					$("a.black1").click(function(){
+						$("a.black1").hide(500,function(){
+							$("a.black1").show(500);
+						});
+					});
+					$("#About0, #About1").click(function(){
+						$("#new_content").hide("500",function(){
+							$("#new_content").load("About.html #new_content",function(){
+								$("#new_content").show("500");
+							});
+						});
+					});
+					$("#Index").click(function(){
+						$("#new_content").hide("500",function(){
+							$("#new_content").load("Index.html #new_content",function(){
+								$("#new_content").show("500");
+							});
+						});
+					});
+					$("#Help0, #Help1").click(function(){
+						$("#new_content").hide("500",function(){
+							$("#new_content").load("Help.html #new_content",function(){
+								$("#new_content").show("500");
+							});
+						});
+					});
+					$("a.containers").click(function(){
+						$("#new_content").hide("500",function(){
+							$("#new_content").load("Containers.html #new_content",function(){
+								$("#new_content").show("500");
+							});
+						});
+					});
+					$("#Containers").click(function(){
+						$("#new_content").hide("500",function(){
+							$("#new_content").load("Containers.html #new_content",function(){
+								$("#new_content").show("500");
+							});
+						});
+					});
+					$("a.exterior").click(function(){
+						$("#new_content").hide("500",function(){
+							$("#new_content").load("Exterior.html #new_content",function(){
+								$("#new_content").show("500");
+							});
+						});
+					});
+					$("#Exterior").click(function(){
+						$("#new_content").hide("500",function(){
+							$("#new_content").load("Exterior.html #new_content",function(){
+								$("#new_content").show("500");
+							});
+						});
+					});					
+				});
