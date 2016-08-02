@@ -4,15 +4,11 @@ html
 	include ./layout.pug
 	body
 		#page_container(style="display:none;")
-			#upper_navbar.container(style="width:100%;background-color:#EEEEEE;height:45px;border-top:4px solid;border-color:#ff9900;text-align:right;")
-				#nav_links.container(style="max-width:850px;padding-top:10px;position:relative;")
+			#upper_navbar.container(style="width:100%;background-color:#EEEEEE;max-height:80px;height:100%;border-top:4px solid;border-color:#ff9900;text-align:right;")
+				#nav_links.container(style="max-width:850px;height:100%;padding:15px;position:relative;font-size:12px;")
 					a.black1(href="#", id="Index",style="padding-left:10px;padding-right:10px;") Home
 					b | 
 					a.black1(href="#", id="About0",style="padding-left: 10px;padding-right: 10px;") About
-					b |
-					a.black1(href="#", id="Containers",style="padding-left: 10px;padding-right: 10px;") Containers
-					b | 
-					a.black1(href="#", id="Exterior",style="padding-left: 10px;padding-right: 10px;") Exterior 
 					b | 
 					a.black1(href="#", style="padding-left: 10px;padding-right: 10px;") Account Home
 					b | 
@@ -22,6 +18,13 @@ html
 			#main_content.container(style="max-width:850px;")
 				#title_pic.row(style="height:110px;padding:10px;background-size:100%;max-width:587px;background-position:center;background-repeat: no-repeat; background-image:url('../public/media/nailTitle.png');")
 				#product_navbar.navbar(style="background-color:#2d2206; text-align:center;padding:5px;width:100%;")
+					.btn-group( id="button_fade")
+						button(type="button", class="btn btn-default btn-sm" data-hover="dropdown", style="background-color: transparent;color: #FFF;border-color:transparent;padding-top:10px;") MORE LINKS --->
+						.dropdown-menu(style="background-color: #2d2206; color: #FFF;text-align: center;")
+							a.containers(href="#") Containers
+							br
+							a.exterior(href="#") Exterior
+					<b class="ylwpipe"> | </b>	
 					.btn-group( id="button_fade")
 						button(type="button", class="btn btn-default btn-sm" data-hover="dropdown", style="background-color: transparent;color: #FFF;border-color:transparent;padding-top:10px;") ANCHOR BOLTS
 						.dropdown-menu(style="background-color: #2d2206; color: #FFF;text-align: center;")
@@ -74,6 +77,8 @@ html
 					#new_content
 						.col-xs-8
 							.h2(style="margin-top:-10px;color: #ff9900;text-align:center;") Homepage
+							.h5(style="margin-top:-10px; margin-left:15px;color: #2d2206;text-align:center;") 
+							p(style="text-indent:15px;") This is an emulation of the website "<b style="color:#F90;"><u>NailPlant.com</u></b>." There are working links on the top navigation bar and there are also working links in the drop-down menus located on the second navbar. <b style="color:#F90;">Explore!</b>
 			script.
 				$("document").ready(function(){
 					$("#title_pic.row").css({
@@ -89,58 +94,65 @@ html
 						"padding" : "5px",
 						"color" : "#FF9900"
 					});	
-					$("#page_container").fadeIn(1500, "linear");
+					$("#page_container").fadeIn(500, "linear");
 					$("a.black1").click(function(){
 						$("a.black1").hide(500,function(){
 							$("a.black1").show(500);
 						});
 					});
+					$("#title_pic").click(function(){
+						$("#title_pic").hide(1000,function(){
+							$("#new_content").load("#",function(){
+								$("#title_pic").show(500);
+							});
+						});
+					});
 					$("#About0, #About1").click(function(){
-						$("#new_content").hide("500",function(){
+						$("#new_content").hide(500,function(){
 							$("#new_content").load("About.html #new_content",function(){
-								$("#new_content").show("500");
+								$("#new_content").show(500);
 							});
 						});
 					});
 					$("#Index").click(function(){
-						$("#new_content").hide("500",function(){
+						$("#new_content").hide(500,function(){
 							$("#new_content").load("Index.html #new_content",function(){
-								$("#new_content").show("500");
+								$("#new_content").show(500);
 							});
 						});
 					});
 					$("#Help0, #Help1").click(function(){
-						$("#new_content").hide("500",function(){
+						$("#new_content").hide(500, function(){
 							$("#new_content").load("Help.html #new_content",function(){
-								$("#new_content").show("500");
+								$("#new_content").show(500);
 							});
 						});
 					});
 					$("a.containers").click(function(){
-						$("#new_content").hide("500",function(){
+						$("#new_content").hide(500,function(){
 							$("#new_content").load("Containers.html #new_content",function(){
-								$("#new_content").show("500");
+								$("#new_content").show(500);
 							});
 						});
 					});
 					$("#Containers").click(function(){
-						$("#new_content").hide("500",function(){
+						$("#new_content").hide(500,function(){
 							$("#new_content").load("Containers.html #new_content",function(){
-								$("#new_content").show("500");
+								$("#new_content").show(500);
 							});
 						});
 					});
 					$("a.exterior").click(function(){
-						$("#new_content").hide("500",function(){
+						$("#new_content").hide(500,function(){
 							$("#new_content").load("Exterior.html #new_content",function(){
-								$("#new_content").show("500");
+								$("#new_content").show(500);
 							});
 						});
 					});
 					$("#Exterior").click(function(){
-						$("#new_content").hide("500",function(){
+						$("#new_content").hide(500,function(){
 							$("#new_content").load("Exterior.html #new_content",function(){
-								$("#new_content").show("500");
+								$("#new_content").show(500);
 							});
 						});
 					});					
